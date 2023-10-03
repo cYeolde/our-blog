@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>css样式</title>
+    <!--优先级：内联式 > 嵌入式 > 外部式(离被设置元素越近优先级越高)-->
+    <!--
+    外部式CSS：
+    1.把css代码写在单独的外部文件中，使用<link>标签将css样式文件链接到HTML文件内
+    2.rel="stylesheet" type="text/css"是固定写法，不可修改。
+    -->
+    <link href="base.css" rel="stylesheet" type="text/css" />
+    <!--嵌入式CSS-->
+    <style type="text/css">
+        /*CSS中这样注释*/
+        /*选择器优先级：内联样式 > id选择器 > 类选择器 > 标签选择器 > 通配符选择器*/
+        p{  /*"{"前面的就是选择器 eg.p/span*/
+            color:pink;
+            font-size:20px;
+        }
+        /*
+        !important设置最高权值
+        p{
+            color:blue!important;
+        }
+        */
+        .text1{ /*类选择器*/
+            color:hotpink;
+            font-size:25px;
+        }
+        #text2{ /*ID选择器 ！！！！在一个html文档中仅能使用一次*/
+            color:hotpink;
+            font-size:25px;
+        }
+        .text1>span{/*子选择器*/
+            border:1px solid green;/*此样式没有继承性*/
+        }
+        #text2 span{/*后代选择器*/
+            border:1px solid blue;
+        }
+        *{/*通用选择器*/
+
+        }
+        a{ /*a是内联元素，内联元素不能设置宽高*/
+            display:inline-block;/*设置成内联块状元素*/
+            width:50px;
+            height:20px;
+            background:pink;
+            text-align: center;
+        }
+        a:hover{/*悬停*/
+            color:deeppink;
+        }
+        h1,#text2 span{/*分组选择器*/
+
+        }
+        /*盒模型*/
+        div{
+            width:100px;/*内容宽度和高度*/
+            height:100px;
+            border:5px solid #888;/*边框 dashed/dotted/solid */
+            /*padding在边框里，margin在边框外*/
+            padding-left:100px;/*填充 内边距 上右下左*/
+            margin:50px;/*边界 外边距 上右下左*/
+            border-radius:15px 30px 10px 30px;/*左上 右上 右下 左下*/
+            /*层模型*/
+            /*
+            --absolute绝对定位--
+            position:absolute;
+            top:50px;
+            right:100px;
+            --relative相对定位--
+            position:relative;//偏移前的位置仍保持不动
+            left:100px;
+            top:50px;
+            --fixed固定定位--
+            position:fixed;//固定在浏览器窗口的某个位置，滚动时位置不变
+            right:0; //右下角
+            bottom:0;
+            */
+        }
+    </style>
+</head>
+
+<body>
+<h1>css3</h1>
+<!--类选择器:类选择符的前面是圆点(.)-->
+<p class="text1">111111<span>22222</span></p>
+<!--唯一标识：ID选择器，为标签设置id="ID名称"，ID选择符的前面是井号（#）号-->
+<p id="text2"><span>333</span>444</p>
+<!--内联CSS样式-->
+<p style="color:palevioletred;font-size:20px">内联css样式写在现有标签中</p>
+<a href="http://www.imooc.com">hover</a>
+<br/><br/>
+<a>1</a>
+<a>2</a>
+<a>3</a>
+<div>盒子</div>
+</body>
+</html>
