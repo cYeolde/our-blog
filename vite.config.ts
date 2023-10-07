@@ -1,6 +1,7 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import vuetify from 'vite-plugin-vuetify'
+import VitePrism from "vite-plugin-prismjs";
 
 const path = require('path')
 
@@ -21,7 +22,13 @@ export default defineConfig({
     }),
     Components({
       resolvers: [ElementPlusResolver()]
-    })
+    }),
+    //代码高亮
+    VitePrism({
+      languages: ['cpp','java','python','javascript','html','css','json'],
+      plugins: ['line-numbers','copy-to-clipboard'],
+      theme: 'okaidia',
+    }),
   ],
   css: {
     preprocessorOptions: {

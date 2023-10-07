@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
 import Index from "@/views/Index.vue";
-import Classify from "@/views/Classify.vue";
+import Articles from "@/views/Articles.vue";
 import About from "@/views/About.vue";
 import Photos from "@/views/Photos.vue";
 import Tags from "@/views/Tags.vue";
@@ -14,9 +14,9 @@ const routes: Array<RouteRecordRaw> = [
     children: []
   },
   {
-    path:'/classify',
-    name: 'classify',
-    component: Classify,
+    path:'/articles',
+    name: 'articles',
+    component: Articles,
     children: []
   },
   {

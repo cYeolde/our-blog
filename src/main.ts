@@ -5,24 +5,39 @@ import store from './store'
 import { loadFonts } from './plugins/webfontloader'
 import vuetify from './plugins/vuetify'
 import './assets/css/waterfall.css'
+
 // 预览组件以及样式
 import VMdPreview from '@kangc/v-md-editor/lib/preview';
-import '@kangc/v-md-editor/lib/style/preview.css';
-// VuePress主题以及样式（这里也可以选择github主题）
+import '@kangc/v-md-editor/lib/style/base-editor.css';
+import VueMarkdownEditor from '@kangc/v-md-editor';
+
+//VuePress主题以及样式
 import vuepressTheme from '@kangc/v-md-editor/lib/theme/vuepress.js';
 import '@kangc/v-md-editor/lib/theme/style/vuepress.css';
 
-// @ts-ignore
+//代码高亮
 import Prism from 'prismjs';
-// 代码高亮
-import 'prismjs/components/prism-json';
-// 选择使用主题
+
+//代码行数
+import createLineNumbertPlugin from '@kangc/v-md-editor/lib/plugins/line-number/index';
+
+//快速复制代码
+import createCopyCodePlugin from '@kangc/v-md-editor/lib/plugins/copy-code/index';
+import '@kangc/v-md-editor/lib/plugins/copy-code/copy-code.css';
+
+// //@ts-ignore
+// //高亮代码行
+// import createHighlightLinesPlugin from '@kangc/v-md-editor/lib/plugins/highlight-lines/index';
+// import '@kangc/v-md-editor/lib/plugins/highlight-lines/highlight-lines.css';
+
 VMdPreview.use(vuepressTheme, {
   Prism,
 });
+VMdPreview.use(createLineNumbertPlugin());
+VMdPreview.use(createCopyCodePlugin());
+// VMdPreview.use(createHighlightLinesPlugin());
 
-loadFonts()
-
+loadFonts();
 
 
 createApp(App)
