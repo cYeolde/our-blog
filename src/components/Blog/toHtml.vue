@@ -12,8 +12,7 @@
 
 <script setup lang="ts">
 import markdownTxt from "@/assets/Articles/单例模式.md?raw";
-import { onMounted, onBeforeUnmount } from "vue";
-
+//快速复制代码
 const handleCopyCodeSuccess = (code:String) => {
   console.log(code);
 };
