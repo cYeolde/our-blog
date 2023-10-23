@@ -66,7 +66,8 @@
 import { ref, computed } from "vue";
 //@ts-ignore
 import image from "@/assets/Image/Archive/ArchiveCarousel1.jpg";
-// import service from '@/utils/request'
+import {FirstListAPI} from "@/request/api";
+
 const items= [
   {
     title: 'Title',
@@ -98,21 +99,8 @@ const displayItems=computed(() => {
   const end=start + itemsPerPage;
   return items.slice(start, end);
 });
-const getData=()=>{
-  service({
-    url: '/api/poi/list',
-    method: 'get',
-    params: {
-      page: page.value,
-      pageSize: itemsPerPage,
-    },
-  }).then((res: any)=>{
-    console.log(res)
-  }).catch((err: any)=>{
-    console.log(err)
-  })
-}
-// getData()
+let res = await FirstListAPI(1);
+console.log(res);
 
 </script>
 
