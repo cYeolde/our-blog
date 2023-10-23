@@ -1,12 +1,11 @@
 <template>
   <div>
-    <toHtml />
+    <router-view />
   </div>
 </template>
 
 <script setup lang="ts">
 
-import ToHtml from "@/components/Blog/toHtml.vue";
 </script>
 
 <style scoped>

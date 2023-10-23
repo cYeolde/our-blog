@@ -25,17 +25,12 @@ import createLineNumbertPlugin from '@kangc/v-md-editor/lib/plugins/line-number/
 import createCopyCodePlugin from '@kangc/v-md-editor/lib/plugins/copy-code/index';
 import '@kangc/v-md-editor/lib/plugins/copy-code/copy-code.css';
 
-// //@ts-ignore
-// //高亮代码行
-// import createHighlightLinesPlugin from '@kangc/v-md-editor/lib/plugins/highlight-lines/index';
-// import '@kangc/v-md-editor/lib/plugins/highlight-lines/highlight-lines.css';
 
 VMdPreview.use(vuepressTheme, {
   Prism,
 });
 VMdPreview.use(createLineNumbertPlugin());
 VMdPreview.use(createCopyCodePlugin());
-// VMdPreview.use(createHighlightLinesPlugin());
 
 loadFonts();
 

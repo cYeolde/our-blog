@@ -7,7 +7,7 @@ import util from "@/utils/util";
 <template>
  <TagsBanner />
   <TagsCard />
-  <img :src="util.getAssetsFile('Archive/ArchiveCarousel1.jpg')" alt="">
+<!--  <img :src="util.getAssetsFile('Archive/ArchiveCarousel1.jpg')" alt="">-->
 </template>
 
 <style scoped>

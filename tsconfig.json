@@ -14,7 +14,11 @@
     "baseUrl": ".",
     "types": [
       "webpack-env",
-      "jest"
+      "jest",
+      "vue-echarts"
+    ],
+    "typeRoots": [
+      "node_modules/@types"
     ],
     "paths": {
       "@/*": [

@@ -3,10 +3,10 @@
     <header>
       <NavBar />
     </header>
+    <!--挂载路由-->
     <router-view />
     <goTop />
     <Footer />
-
   </div>
 </template>
 
