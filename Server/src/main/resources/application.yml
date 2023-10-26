@@ -1,14 +1,23 @@
 uploadPic:
-  localPath: C://Users/21333/Desktop/ServerSource/
+  localPath: C://Users/21333/Desktop/ServerSource/post_pic
   accessPath: /uploadPic/
+
+uploadFile:
+  localPath: C://Users/21333/Desktop/ServerSource/_post
+  accessPath: /uploadFile/
 
 spring:
   application:
     name: Server
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 10MB # 最大支持文件大小
+      max-request-size: 50MB # 最大支持请求大小
 
   datasource:
     username: ryan6073
     password: "025025"
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://127.0.0.1:3306/college_poi
+    url: jdbc:mysql://127.0.0.1:3306/blog_info
 
