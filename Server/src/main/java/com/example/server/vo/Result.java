@@ -15,6 +15,7 @@ public class Result<T> {
     }
     public static <T> Result<T> error() {
         return (new Result<>(ResultEnum.ERROR_UNKNOWN.getMsg(), ResultEnum.ERROR_UNKNOWN.getCode(), null));
+
     }
     public static <T> Result<T> error(ResultEnum rEnum) {
         return (new Result<>(rEnum.getMsg(), rEnum.getCode(), null));

@@ -12,8 +12,10 @@ public class PoiVo {
     private String title;
     private String description;
     private Integer id;
+    private String coverUrl;
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
     private Timestamp uploadTime;
+    private String filePath;
     private List<Pic> picList;
 
 

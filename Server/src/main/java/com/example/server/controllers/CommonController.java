@@ -3,7 +3,6 @@ package com.example.server.controllers;
 
 import com.example.server.form.PoiForm;
 import com.example.server.pojo.Pic;
-import javax.sql.rowset.serial.SerialBlob;
 import com.example.server.pojo.Poi;
 import com.example.server.service.IPoiService;
 import com.example.server.service.IStorageService;
@@ -50,7 +49,7 @@ public class CommonController {
 
     @PostMapping(value = "/uploadFile")
     @ResponseBody
-    public Result<PoiVo> uploadNew(@RequestPart("file") MultipartFile file, @RequestPart("poiForm") String poiFormStr) throws JsonProcessingException {
+    public Result<PoiVo> uploadNew(@RequestPart("file") MultipartFile file, @RequestPart("poiForm") String poiFormStr, @RequestPart("cover") MultipartFile cover) throws JsonProcessingException {
         if (file != null) {
             String fileName = file.getOriginalFilename();
             log.info("upload file:{} success", fileName);
@@ -58,8 +57,16 @@ public class CommonController {
             ObjectMapper mapper = new ObjectMapper();
             PoiForm poiForm = mapper.readValue(poiFormStr, PoiForm.class);
             log.info("my info: {}",poiForm);
+
             Poi poi = new Poi();
             BeanUtils.copyProperties(poiForm, poi);
+            if(cover != null){
+                String coverName = cover.getOriginalFilename();
+                log.info("upload cover:{} success", coverName);
+                storageService.save(cover, coverName, localPathPic);
+                poi.setCoverUrl(accessPathPic + coverName);
+            }
+            poi.setFilePath(accessPathFile + fileName);
             poiService.saveMain(poi, poiForm.getPicList());
             PoiVo poiVo = new PoiVo();
             BeanUtils.copyProperties(poi, poiVo);

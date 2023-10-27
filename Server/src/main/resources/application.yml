@@ -1,9 +1,9 @@
 uploadPic:
-  localPath: C://Users/21333/Desktop/ServerSource/post_pic
+  localPath: C://Users/21333/Desktop/ServerSource/post_pic/
   accessPath: /uploadPic/
 
 uploadFile:
-  localPath: C://Users/21333/Desktop/ServerSource/_post
+  localPath: C://Users/21333/Desktop/ServerSource/_post/
   accessPath: /uploadFile/
 
 spring:

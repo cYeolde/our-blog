@@ -14,6 +14,7 @@ public class WebConfig implements WebMvcConfigurer {
     @Value("${uploadPic.localPath}")
     private String localPath;
 
+
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
         registry.addResourceHandler(accessPath + "**").addResourceLocations("file:" + localPath);
