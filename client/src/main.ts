@@ -26,15 +26,19 @@ import createLineNumbertPlugin from '@kangc/v-md-editor/lib/plugins/line-number/
 import createCopyCodePlugin from '@kangc/v-md-editor/lib/plugins/copy-code/index';
 import '@kangc/v-md-editor/lib/plugins/copy-code/copy-code.css';
 
+// @ts-ignore
+import { createPinia } from 'pinia'
+
 
 
 loadFonts();
 
 const app = createApp(App)
-
+const pinia = createPinia()
 app.use(router)
 app.use(store)
 app.use(vuetify)
+app.use(pinia)
 VMdPreview.use(vuepressTheme, {Prism});
 VMdPreview.use(createLineNumbertPlugin());
 VMdPreview.use(createCopyCodePlugin());

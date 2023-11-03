@@ -1,12 +1,14 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
 import Index from "@/views/Index.vue";
-import Articles from "@/components/Blog/Articles.vue";
+import Articles from "@/components/Articles/Articles.vue";
 import About from "@/views/About.vue";
 import Photos from "@/views/Photos.vue";
 import Tags from "@/views/Tags.vue";
 import Archive from "@/views/Archive.vue";
 import Classify from "@/views/Classify.vue";
-import Notes from "@/components/Blog/ClassifyList.vue";
+import Notes from "@/components/Classify/ListByClassify.vue";
+import ListByTag from "@/components/Tags/ListByTag.vue";
+import ListByClassify from "@/components/Classify/ListByClassify.vue";
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -32,6 +34,12 @@ const routes: Array<RouteRecordRaw> = [
       }
     ]
   },
+  {
+    path:'/classify/:classifyName',
+    name: 'classifyName',
+    component: ListByClassify,
+    children: []
+  },
   //动态路由参数，接受文章ID
   {
     path: '/articles/:id',
@@ -55,6 +63,12 @@ const routes: Array<RouteRecordRaw> = [
     name: 'tags',
     component: Tags,
     children: []
+  },
+  {
+    path:'/tags/:tagName',
+    name:'tagName',
+    component:ListByTag,
+    children:[]
   },
   {
     path: '/archive',

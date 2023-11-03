@@ -12,80 +12,63 @@
   </transition>
 </template>
 
-<script>
-export default {
-  name: "goTop",
-  props: {
-    visibilityHeight: {
-      type: Number,
-      default: 400,
-    },
-    backPosition: {
-      type: Number,
-      default: 0,
-    },
-    customStyle: {
-      type: Object,
-      default: function () {
-        return {
-          right: "50px",
-          bottom: "50px",
-          width: "30px",
-          height: "30px",
-          "border-radius": "4px",
-          "line-height": "45px",
-          background: "#FFFFFF00",
-        };
-      },
-    },
-    transitionName: {
-      type: String,
-      default: "fade",
-    },
-  },
-  data() {
-    return {
-      visible: false,
-      interval: null,
-      isMoving: false,
-    };
-  },
-  mounted() {
-    window.addEventListener("scroll", this.handleScroll);
-  },
-  beforeDestroy() {
-    window.removeEventListener("scroll", this.handleScroll);
-    if (this.interval) {
-      clearInterval(this.interval);
-    }
-  },
-  methods: {
-    handleScroll() {
-      this.visible = window.pageYOffset > this.visibilityHeight;
-    },
-    goTop() {
-      if (this.isMoving) return;
-      const start = window.pageYOffset;
-      let i = 0;
-      this.isMoving = true;
-      this.interval = setInterval(() => {
-        const next = Math.floor(this.easeInOutQuad(10 * i, start, -start, 500));
-        if (next <= this.backPosition) {
-          window.scrollTo(0, this.backPosition);
-          clearInterval(this.interval);
-          this.isMoving = false;
-        } else {
-          window.scrollTo(0, next);
-        }
-        i++;
-      }, 16.7);
-    },
-    easeInOutQuad(t, b, c, d) {
-      if ((t /= d / 2) < 1) return (c / 2) * t * t + b;
-      return (-c / 2) * (--t * (t - 2) - 1) + b;
-    },
-  },
+<script setup>
+import { ref, onMounted, onBeforeUnmount } from 'vue';
+
+const visibilityHeight = ref(400);
+const backPosition = ref(0);
+const customStyle = ref({
+  right: '50px',
+  bottom: '50px',
+  width: '30px',
+  height: '30px',
+  'border-radius': '4px',
+  'line-height': '45px',
+  background: '#FFFFFF00',
+});
+const transitionName = ref('fade');
+
+const visible = ref(false);
+const interval = ref(null);
+const isMoving = ref(false);
+
+const handleScroll = () => {
+  visible.value = window.pageYOffset > visibilityHeight.value;
 };
+
+const goTop = () => {
+  if (isMoving.value) return;
+  const start = window.pageYOffset;
+  let i = 0;
+  isMoving.value = true;
+  interval.value = setInterval(() => {
+    const next = Math.floor(easeInOutQuad(10 * i, start, -start, 500));
+    if (next <= backPosition.value) {
+      window.scrollTo(0, backPosition.value);
+      clearInterval(interval.value);
+      isMoving.value = false;
+    } else {
+      window.scrollTo(0, next);
+    }
+    i++;
+  }, 16.7);
+};
+
+const easeInOutQuad = (t, b, c, d) => {
+  if ((t /= d / 2) < 1) return (c / 2) * t * t + b;
+  return (-c / 2) * (--t * (t - 2) - 1) + b;
+};
+
+onMounted(() => {
+  window.addEventListener('scroll', handleScroll);
+});
+
+onBeforeUnmount(() => {
+  window.removeEventListener('scroll', handleScroll);
+  if (interval.value) {
+    clearInterval(interval.value);
+  }
+});
 </script>
 
 <style scoped>

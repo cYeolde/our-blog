@@ -6,7 +6,7 @@
 </template>
 
 <script setup lang="ts">
-import todoList from "@/components/Home/todoList.vue";
+import todoList from "@/components/About/todoList.vue";
 import 'gitalk/dist/gitalk.css'
 import Gitalk from 'gitalk'
 

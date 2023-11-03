@@ -1,4 +1,15 @@
 <template>
+  <v-container>
+    <v-banner
+      class="font-weight-bold text-medium-emphasis text-md-h5 text-lg-h4"
+      stacked
+    >
+      <v-icon start icon="mdi-camera-outline"></v-icon>
+      Photos
+      <v-banner-text class="text-overline text-disabled">
+        777777777</v-banner-text>
+    </v-banner>
+  </v-container>
   <div class="text-center mb-10">
     Columns
     <input

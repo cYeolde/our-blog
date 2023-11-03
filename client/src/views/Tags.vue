@@ -1,12 +1,9 @@
 <script setup lang="ts">
-import TagsBanner from "@/components/Tags/TagsBanner.vue";
-import TagsCard from "@/components/Tags/TagsCard.vue";
-import util from "@/utils/util";
+import TagsList from "@/components/Tags/TagsList.vue";
 </script>
 
 <template>
- <TagsBanner />
-  <TagsCard />
+  <TagsList />
 <!--  <img :src="util.getAssetsFile('Archive/ArchiveCarousel1.jpg')" alt="">-->
 </template>
 

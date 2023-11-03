@@ -1,5 +1,14 @@
 <template>
   <v-container>
+    <v-banner
+      class="font-weight-bold text-medium-emphasis text-md-h5 text-lg-h4"
+      stacked
+    >
+      <v-icon start icon="mdi-folder-outline"></v-icon>
+      Archive
+      <v-banner-text class="text-overline text-disabled">
+        777777777</v-banner-text>
+    </v-banner>
     <v-row justify="space-around">
       <v-hover v-slot="{ isHovering, props }">
         <v-card
@@ -11,27 +20,27 @@
           <v-card-text>
             <v-timeline align="center">
               <v-timeline-item
-                v-for="(year, i) in years"
+                v-for="(article, i) in articles"
                 :key="i"
-                :dot-color="year.color"
+                :dot-color="article.color"
                 size="small"
               >
-                <!--自定义时间轴另一面-->
                 <template v-slot:opposite>
                   <div
-                    :class="`pt-1 headline font-weight-bold text-${year.color}`"
-                    @click="onYearClick(year.year)"
-                    style="cursor: pointer;"
+                    :class="`pt-1 headline font-weight-bold text-${article.color}`"
                   >
-                    {{ year.year }}
+                    {{ article.date }}
                   </div>
                 </template>
                 <div>
-                  <h1 :class="`mt-n1 headline font-weight-light mb-4 text-${year.color}`">
-                    Lorem ipsum
+                  <h1 :class="`mt-n1 headline font-weight-light mb-4 text-${article.color} underline-text`"
+                      @click="onTitleClick(article.id)"
+                      style="cursor: pointer;"
+                  >
+                    {{ article.title }}
                   </h1>
                   <div>
-                    Lorem ipsum dolor sit amet, no nam oblique veritus. Commune scaevola imperdiet nec ut, sed euismod convenire principes at. Est et nobis iisque percipit, an vim zril disputando voluptatibus, vix an salutandi sententiae.
+                    {{ article.description }}
                   </div>
                 </div>
               </v-timeline-item>
@@ -44,36 +53,58 @@
 </template>
 
 <script setup lang="ts">
-
-const years = [
+import { ref, onMounted } from 'vue';
+import router from "@/router";
+const articles=[
   {
+    id:7,
     color: 'cyan',
-    year: '2019/12/05',
+    date: '2019/12/05',
+    title:'title1',
+    description:'description1',
+    coverUrl:'/api/cover/1'
   },
   {
+    id:8,
     color: 'green',
-    year: '2019/12/23',
+    date: '2019/12/23',
+    title:'title2',
+    description:'description2',
+    coverUrl:'/api/cover/2'
   },
   {
+    id:9,
     color: 'pink',
-    year: '2020/5/24',
+    date: '2020/5/24',
+    title:'title3',
+    description:'description3',
+    coverUrl:'/api/cover/3'
   },
   {
+    id:10,
     color: 'amber',
-    year: '2021/1/22',
+    date: '2021/1/22',
+    title:'title4',
+    description:'description4',
+    coverUrl:'/api/cover/4'
   },
   {
+    id:11,
     color: 'orange',
-    year: '2023/7/11',
-  },
-];
+    date: '2023/7/11',
+    title: 'title5',
+    description: 'description5',
+    coverUrl: '/api/cover/5'
+  }];
 
-const onYearClick = (year:String) => {
-  // 在这里处理年份文本的点击事件，根据需要执行操作
-  console.log(`Year clicked: ${year}`);
+
+const onTitleClick = (id:number) => {
+  router.push(`/articles/${id}`);
 };
 </script>
 
 <style scoped>
-
+.underline-text {
+  text-decoration: underline;
+}
 </style>

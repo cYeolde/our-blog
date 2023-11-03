@@ -1,3 +1,4 @@
+// @ts-ignore
 import instance from "./request";
 
 //一般情况下，接口类型会放到一个文件
@@ -48,8 +49,45 @@ export const ProductCategoryApi = (params: { parentId: number }): any =>
 export const AdminListAPI = (params:any): any =>
   instance.get("/admin/list", { params });
 
-export const FirstListAPI = (params:any): any =>
-  instance.get("/poi/list", { params: { pageNum:1,pageSize:6} });
+// export const FirstListAPI = (params:any): any =>
+//   instance.get("/poi/list", { params: { pageNum:1,pageSize:6} });
 
-export const ListAPI = (params:any): any =>
-  instance.get("/poi/list", { params });
+// 文章分页列表
+export const getArticleListApi = (pageNum:number, pageSize:number) => {
+  // 计算偏移量
+  const offset = (pageNum - 1) * pageSize;
+  // 发起请求
+  return instance.get("/poi/list", {
+    params: { offset, limit: pageSize }
+  });
+}
+
+// export const getArticleListApi = (pageNum:number, pageSize:number) => {
+//   return instance.get("/poi/list", {
+//     params: { pageNum, pageSize }
+//   });
+// }
+
+// 文章详情
+export const getArticleDetailApi = (id:number) => {
+  return instance.get(`/poi/detail/${id}`);
+}
+
+//文章分类
+export const getListByClassifyApi = (classifyName:string,pageNum:number) => {
+  return instance.get("/poi/classify", {
+    params: { classifyName, pageNum }
+  });
+}
+
+//文章标签
+export const getListByTagApi = (tagName:string,pageNum:number) => {
+  return instance.get("/poi/tags", {
+    params: { tagName, pageNum }
+  });
+}
+
+//文章归档
+export const getArchiveApi = () => {
+  return instance.get("/poi/archive");
+}

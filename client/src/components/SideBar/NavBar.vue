@@ -25,7 +25,7 @@
             <v-btn
               size="small"
               variant="plain"
-              prepend-icon="mdi-menu"
+              prepend-icon="mdi-bookmark-outline"
               v-bind="props"
             >
               classify
@@ -116,7 +116,7 @@
               v-bind="props"
             >
               <v-list-item-title class="white--text">
-                <v-icon class="white--text">mdi-menu</v-icon>
+                <v-icon class="white--text">mdi-bookmark-outline</v-icon>
                 Classify
               </v-list-item-title>
             </v-list-item>
@@ -150,6 +150,12 @@
 import { ref } from 'vue';
 import { useTheme } from 'vuetify';
 
+//get后端的分类名放到NavBar里
+const Classify=ref([
+  ['Notes', 'mdi-note-outline'],
+  ['Projects', 'mdi-clipboard-outline'],
+]);
+
 const items=ref([
   {title:'Notes'},
   {title:'Projects'},
@@ -157,10 +163,6 @@ const items=ref([
 
 const drawer = ref(false);
 const open=[true];
-const Classify=ref([
-  ['Notes', 'mdi-note-outline'],
-  ['Projects', 'mdi-clipboard-outline'],
-]);
 const links=ref([
   {icon:'mdi-camera-outline',text:'Photos',route:'/photos'},
   {icon:'mdi-label-outline',text:'Tags',route:'/tags'},

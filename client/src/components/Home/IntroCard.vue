@@ -15,8 +15,7 @@
       </div>
       <v-card-text>
         <div class="text--primary">
-          简介<br>
-          太丑了不好看
+          简介
         </div>
       </v-card-text>
       <v-divider
@@ -65,7 +64,7 @@
             <p class="text-h4 text--primary">
               what to show？？
             </p>
-            <p>不知道写啥</p>
+            <p>待编辑</p>
           </v-card-text>
           <v-card-actions class="pt-0">
             <v-btn

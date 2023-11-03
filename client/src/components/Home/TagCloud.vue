@@ -4,6 +4,9 @@
       class="mx-auto"
       max-width="344"
     >
+      <v-card-title class="text-h4 text--primary">
+        <v-icon color="yellow">mdi-tag-outline</v-icon>
+      </v-card-title>
       <div id="wordCloud" style="width: 344px; height: 344px;"></div>
     </v-card>
   </v-container>
@@ -13,9 +16,10 @@
 import * as echarts from 'echarts';
 import 'echarts-wordcloud';
 import { onMounted } from 'vue';
+import router from "@/router";
 
 const echartsData = [
-  { value: '30', name: '标签1' },
+  { value: '30', name: 'tag1'},
   { value: '29', name: '标签2' },
   { value: '28', name: '标签3' },
   { value: '27', name: '标签4' },
@@ -68,7 +72,8 @@ const initChart = () => {
   myChart.setOption(option);
 
   myChart.on('click', function (params) {
-    console.log('myChart----click---:', params, '------', params.data)
+    console.log('myChart----click---:', params, '------', params.name);
+    router.push(`/tags/${params.name}`);//跳转到对应标签的文章列表页
   });
 };
 
