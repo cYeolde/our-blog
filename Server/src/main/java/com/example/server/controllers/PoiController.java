@@ -12,6 +12,7 @@ import com.example.server.service.IPoiService;
 import com.example.server.vo.Result;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
 import org.springframework.web.bind.annotation.*;
 import lombok.extern.slf4j.Slf4j;
 import com.example.server.vo.PoiVo;
@@ -55,6 +56,7 @@ public class PoiController {
 //                ).collect(Collectors.toList());
         IPage<PoiVo> pageResultVo = new Page<>(pageNum, pageSize);
         pageResultVo.setRecords(voList);
+        pageResultVo.setTotal(pageResult.getTotal());
         return Result.success(pageResultVo);
     }
 
@@ -82,8 +84,6 @@ public class PoiController {
         Poi poi = new Poi();
         BeanUtils.copyProperties(poiForm, poi);
         poiService.saveMain(poi, poiForm.getPicList());
-
-
         return detail(poi.getId());
     }
 
