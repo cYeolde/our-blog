@@ -41,17 +41,17 @@
                 Notes
               </v-chip>
               </router-link>
-              <router-link to="/tags/tag1">
+              <router-link :to="`/tags/${items[i].label}`">
               <v-chip
                 variant="text"
                 style="cursor: pointer;"
               >
                 <v-icon start icon="mdi-label-outline"></v-icon>
-                Tag1
+                {{ item.label }}
               </v-chip>
               </router-link>
               <div class="align-self-center">
-<!--                <router-link :to="`/articles/${items[i + (currentPage - 1) * itemsPerPage].id}`">-->
+                <router-link :to="`/articles/${items[i].id}`">
                   <v-btn
                     variant="text"
                     :class="{ 'show-btns': isHovering }"
@@ -59,7 +59,7 @@
                   >
                     Read More
                   </v-btn>
-<!--                </router-link>-->
+                </router-link>
               </div>
             </v-img>
           </v-card>
@@ -70,11 +70,12 @@
     <!--pagination-->
     <div class="text-center" >
       <v-pagination
-        v-model="currentPage"
+        v-model="page"
         :length="totalPages"
         rounded="circle"
         prev-icon="mdi-menu-left"
         next-icon="mdi-menu-right"
+        @click="getArticleList(page,6)"
       ></v-pagination>
       <v-divider></v-divider>
     </div>
@@ -82,39 +83,33 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted,watch} from "vue";
+import { ref, onMounted} from "vue";
 import {getArticleListApi} from "@/request/api";
 
 const transparent='rgba(255, 255, 255, 0)';
 //分页
 const page=ref(1);//当前页数  pageNum
 const currentPage=ref(1);//当前页数  pageNum
-const itemsPerPage=ref(0);//每页显示的项目数  pageSize
+const itemsPerPage=ref(6);//每页显示的项目数  pageSize
 const totalPages=ref(0);//总页数 pages
 const totalItems=ref(0);//总文章数 total
 const items=ref([]);//文章列表
-// const itemsLoaded=ref(false); //是否加载完成
 
 const getArticleList=async (pageNum:number,pageSize:number) => {
   let res = await getArticleListApi(pageNum,pageSize);
+  console.log(pageNum,pageSize);
   items.value=res.data.records;
   currentPage.value=res.data.current;
   page.value=currentPage.value;
   itemsPerPage.value=res.data.size;
   totalPages.value=res.data.pages;
   totalItems.value=res.data.total;
-  console.log(res.data)
-  console.log(items.value);
-  console.log(currentPage.value);
-  console.log(page.value);
+  console.log(res.data);
 }
 
 onMounted(async () => {
   await getArticleList(page.value,itemsPerPage.value);
 })
-
-
-
 </script>
 
 <style scoped>

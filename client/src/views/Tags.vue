@@ -4,7 +4,6 @@ import TagsList from "@/components/Tags/TagsList.vue";
 
 <template>
   <TagsList />
-<!--  <img :src="util.getAssetsFile('Archive/ArchiveCarousel1.jpg')" alt="">-->
 </template>
 
 <style scoped>

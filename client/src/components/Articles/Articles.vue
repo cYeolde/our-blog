@@ -14,7 +14,6 @@
 import {onBeforeMount, ref} from "vue";
 import {useRoute} from "vue-router";
 import {getArticleDetailApi} from "@/request/api";
-// import markdownTxt from "@/assets/Articles/3.md?raw";
 
 const handleCopyCodeSuccess = (code:String) => {
   console.log(code);

@@ -22,24 +22,24 @@
               <v-timeline-item
                 v-for="(article, i) in articles"
                 :key="i"
-                :dot-color="article.color"
+                :dot-color="getColor(i)"
                 size="small"
               >
                 <template v-slot:opposite>
                   <div
-                    :class="`pt-1 headline font-weight-bold text-${article.color}`"
+                    :class="`pt-1 headline font-weight-bold text-${getColor(i)}`"
                   >
-                    {{ article.date }}
+                    {{ article.uploadTime }}
                   </div>
                 </template>
                 <div>
-                  <h1 :class="`mt-n1 headline font-weight-light mb-4 text-${article.color} underline-text`"
+                  <h1 :class="`mt-n1 headline font-weight-light mb-4 text-${getColor(i)} underline-text`"
                       @click="onTitleClick(article.id)"
                       style="cursor: pointer;"
                   >
                     {{ article.title }}
                   </h1>
-                  <div>
+                  <div :class="`text-${getColor(i)}`">
                     {{ article.description }}
                   </div>
                 </div>
@@ -53,54 +53,29 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted } from 'vue';
+import {ref, onBeforeMount} from 'vue';
 import router from "@/router";
-const articles=[
-  {
-    id:7,
-    color: 'cyan',
-    date: '2019/12/05',
-    title:'title1',
-    description:'description1',
-    coverUrl:'/api/cover/1'
-  },
-  {
-    id:8,
-    color: 'green',
-    date: '2019/12/23',
-    title:'title2',
-    description:'description2',
-    coverUrl:'/api/cover/2'
-  },
-  {
-    id:9,
-    color: 'pink',
-    date: '2020/5/24',
-    title:'title3',
-    description:'description3',
-    coverUrl:'/api/cover/3'
-  },
-  {
-    id:10,
-    color: 'amber',
-    date: '2021/1/22',
-    title:'title4',
-    description:'description4',
-    coverUrl:'/api/cover/4'
-  },
-  {
-    id:11,
-    color: 'orange',
-    date: '2023/7/11',
-    title: 'title5',
-    description: 'description5',
-    coverUrl: '/api/cover/5'
-  }];
+import {getArchiveApi} from "@/request/api";
 
+const articles=ref([]);
 
+onBeforeMount(async ()=>{
+  try {
+    let res = await getArchiveApi();
+    articles.value = res.data;
+    console.log(articles.value);
+  }catch (error) {
+    articles.value = [];
+  }
+})
 const onTitleClick = (id:number) => {
   router.push(`/articles/${id}`);
 };
+const timelineColors = ['cyan', 'green', 'pink', 'amber','orange'];
+const getColor = (index: number) => {
+  return timelineColors[index % timelineColors.length];
+};
+
 </script>
 
 <style scoped>

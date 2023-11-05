@@ -28,9 +28,6 @@ import Carousel from "@/components/Home/Carousel.vue";
 import ArticleList from "@/components/Home/ArticleList.vue";
 import IntroCard from "@/components/Home/IntroCard.vue";
 import TagCloud from "@/components/Home/TagCloud.vue";
-
-const page=1;
-
 </script>
 
 <style scoped>

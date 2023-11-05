@@ -18,11 +18,11 @@
         <div class="d-flex justify-center">
           <v-chip-group>
             <router-link
-              v-for="tag in tags"
-              :key="tag.tagName"
-              :to="`/tags/${tag.tagName}`"
+              v-for="(tag,i) in tags"
+              :key="tag"
+              :to="`/tags/${tags[i]}`"
             >
-              <v-chip variant="text">{{ tag.tagName }}</v-chip>
+              <v-chip variant="text">{{tags[i]}}</v-chip>
             </router-link>
           </v-chip-group>
         </div>
@@ -34,18 +34,15 @@
 
 
 <script setup lang="ts">
-import { ref, onMounted } from 'vue';
+import {ref, onBeforeMount} from 'vue';
+import {getTagApi} from "@/request/api";
+const tags= ref([]);
 
-const tags = ref([
-  { tagName: 'tag1'},
-  { tagName: 'tag2'},
-  { tagName: 'tag3'},
-]);
-
-onMounted(() => {
-  // 在这里可以使用异步请求获取标签列表
-});
-
+onBeforeMount(async() => {
+  let res = await getTagApi();
+  tags.value = res.data;
+  console.log(tags.value);
+})
 </script>
 
 <style scoped>

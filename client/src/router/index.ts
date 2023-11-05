@@ -40,7 +40,6 @@ const routes: Array<RouteRecordRaw> = [
     component: ListByClassify,
     children: []
   },
-  //动态路由参数，接受文章ID
   {
     path: '/articles/:id',
     name: 'articles',

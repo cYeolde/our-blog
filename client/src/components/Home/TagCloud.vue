@@ -19,7 +19,7 @@ import { onMounted } from 'vue';
 import router from "@/router";
 
 const echartsData = [
-  { value: '30', name: 'tag1'},
+  { value: '30', name: '123' },
   { value: '29', name: '标签2' },
   { value: '28', name: '标签3' },
   { value: '27', name: '标签4' },
