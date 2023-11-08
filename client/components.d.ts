@@ -24,8 +24,6 @@ declare module 'vue' {
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     TagCloud: typeof import('./src/components/Home/TagCloud.vue')['default']
-    Tags: typeof import('./src/components/Tags/TagsList.vue')['default']
-    TagsCard: typeof import('./src/components/Tags/TagsList.vue')['default']
     TagsList: typeof import('./src/components/Tags/TagsList.vue')['default']
     TodoList: typeof import('./src/components/About/todoList.vue')['default']
     Waterfall: typeof import('./src/components/Photos/Waterfall.vue')['default']

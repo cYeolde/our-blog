@@ -2,7 +2,7 @@
   <div>
     <v-container class="pa-4 text-center">
       <v-banner
-        class="text-medium-emphasis text-md-h5 text-lg-h5 text-disabled"
+        class="text-medium-emphasis text-h5 text-disabled"
         stacked
       >
         <v-icon start icon="mdi-label-outline"></v-icon>

@@ -1,7 +1,7 @@
 <template>
   <v-container>
     <v-banner
-      class="font-weight-bold text-medium-emphasis text-md-h5 text-lg-h4"
+      class="font-weight-bold text-medium-emphasis text-h5"
       stacked
     >
       <v-icon start icon="mdi-camera-outline"></v-icon>

@@ -4,8 +4,9 @@
       class="mx-auto"
       max-width="344"
     >
-      <v-card-title class="text-h4 text--primary">
-        <v-icon color="yellow">mdi-tag-outline</v-icon>
+      <v-card-title class="text-h5 font-italic text-brown-darken-1">
+        <v-icon color="brown-darken-4">mdi-tag-outline</v-icon>
+        标签云
       </v-card-title>
       <div id="wordCloud" style="width: 344px; height: 344px;"></div>
     </v-card>
@@ -15,8 +16,26 @@
 <script setup lang="ts">
 import * as echarts from 'echarts';
 import 'echarts-wordcloud';
-import { onMounted } from 'vue';
+import { ref,onMounted } from 'vue';
 import router from "@/router";
+import {getTagApi} from "@/request/api";
+
+// const echartsData=ref([]);
+//
+// const generateRandomValue= () => {
+//   return Math.floor(Math.random() * 100);
+// };
+//
+const generateRandomColor = () => {
+  return `rgb(${Math.floor(Math.random() * 100) + 155}, ${Math.floor(Math.random() * 100) + 155}, ${Math.floor(Math.random() * 100) + 155})`;
+};
+//
+// const getTag = async () => {
+//   let res = await getTagApi();
+//   console.log(res.data);
+//   echartsData.value=res.data;
+//   console.log(echartsData.value);
+// };
 
 const echartsData = [
   { value: '30', name: '123' },
@@ -40,9 +59,6 @@ const echartsData = [
   { value: '9', name: '标签19' },
 ];
 
-const generateRandomColor = () => {
-  return `rgb(${Math.floor(Math.random() * 100) + 155}, ${Math.floor(Math.random() * 100) + 155}, ${Math.floor(Math.random() * 100) + 155})`;
-};
 const initChart = () => {
   const myChart = echarts.init(document.getElementById('wordCloud'));
   const option = {
@@ -80,6 +96,8 @@ const initChart = () => {
 onMounted(() => {
   initChart();
 });
+
+
 </script>
 
 <style scoped>

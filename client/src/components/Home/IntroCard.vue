@@ -4,10 +4,10 @@
       class="mx-auto"
       max-width="344"
     >
-      <v-card-title class="text-h4 text--primary">My Profile</v-card-title>
-      <v-card-subtitle>这里写啥</v-card-subtitle>
+      <v-card-title class="text-h5 text-brown-darken-1">My Profile</v-card-title>
+      <v-card-subtitle>个人简介</v-card-subtitle>
       <div class="d-flex d-flex align-center justify-space-around">
-        <v-avatar size="80">
+        <v-avatar size="200">
           <img
             :src="util.getAssetsFile('Avatar/Avatar1.jpg')"
           >
@@ -15,7 +15,7 @@
       </div>
       <v-card-text>
         <div class="text--primary">
-          简介
+
         </div>
       </v-card-text>
       <v-divider
@@ -61,7 +61,7 @@
           style="height: 100%;"
         >
           <v-card-text class="pb-0">
-            <p class="text-h4 text--primary">
+            <p class="text-h4 text-brown-darken-1">
               what to show？？
             </p>
             <p>待编辑</p>
