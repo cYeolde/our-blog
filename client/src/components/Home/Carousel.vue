@@ -18,23 +18,19 @@
 </template>
 
 <script setup lang="ts">
-import Carousel1 from '@/assets/Image/Home/Carousel1.jpg';
-import Carousel2 from '@/assets/Image/Home/Carousel2.jpg';
-import Carousel3 from '@/assets/Image/Home/Carousel3.jpg';
-import Carousel4 from '@/assets/Image/Home/Carousel4.jpg';
-
+import util from '@/utils/util';
 const items = [
   {
-    src: Carousel1,
+    src: util.getAssetsFile('Home/Carousel1.jpg'),
   },
   {
-    src: Carousel2,
+    src: util.getAssetsFile('Home/Carousel2.jpg'),
   },
   {
-    src: Carousel3,
+    src: util.getAssetsFile('Home/Carousel3.jpg'),
   },
   {
-    src: Carousel4,
+    src: util.getAssetsFile('Home/Carousel4.jpg'),
   },
 ]
 </script>

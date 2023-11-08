@@ -7,7 +7,7 @@
       <v-icon start icon="mdi-camera-outline"></v-icon>
       Photos
       <v-banner-text class="text-overline text-disabled">
-        777777777</v-banner-text>
+        Waterfall</v-banner-text>
     </v-banner>
   </v-container>
   <div class="text-center mb-10">
@@ -26,13 +26,13 @@
     :style="{ height: containerHeight + 'px' }"
   >
     <div
-      v-for="item in waterfallData"
-      :key="item.url"
+      v-for="(item,i) in waterfallData"
+      :key="i"
       class="item absolute duration-300"
       :style="{ width: columnWidth + 'px' }"
     >
       <img
-        :src="item.url"
+        :src="item.src"
         alt=""
         :style="{ height: (columnWidth / item.width) * item.height + 'px' }"
         class="rounded"
@@ -43,11 +43,9 @@
 
 <script setup lang="ts">
 import { ref, onMounted, nextTick, watch } from 'vue'
-// waterfallData 是一个数组，存放图片 url 和宽高，格式为：{ url: 'https://xxxx', width: xx, height: xx }
-import waterfallData from "@/utils/waterfallData";
+import waterfallData from '@/utils/waterfallData'
 
-
-const column = ref(4)
+const column = ref(2)
 const rowSpacing = ref(20)
 const columnSpacing = ref(20)
 
