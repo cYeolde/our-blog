@@ -15,7 +15,6 @@ Vue3+Spring Boot 前后端分离博客系统，采用响应式布局兼容PC端�
 - 标签页：单个标签下文章分页展示
 - 归档页：以时间轴展示文章列表
 - 任务清单
-- 评论系统
 
 ## 2、软件架构
 
@@ -53,8 +52,6 @@ Vue3+Spring Boot 前后端分离博客系统，采用响应式布局兼容PC端�
 | IntelliJ IDEA 2021.03 | 后端主要开发工具   | [https://www.jetbrains.com/idea/download](https://www.jetbrains.com/idea/download) |
 | Navicat               | 数据库连接管理工具 | [http://www.formysql.com/xiazai.html](http://www.formysql.com/xiazai.html) |
 | Postman               | API接口调试工具    | [ https://www.postman.com/](https://www.postman.com/)        |
-| Xshell                | Linux远程连接工具  | [https://www.netsarang.com/zh/xshell-download/](https://www.netsarang.com/zh/xshell-download/) |
-| Xftp                  | 网络传输文件       | [https://www.netsarang.com/zh/xftp-download/](https://www.netsarang.com/zh/xftp-download/) |
 | Typora                | Markdown编辑器     | [https://typora.io/](https://typora.io/)                     |
 
 ### **2.4、开发环境**
