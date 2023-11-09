@@ -5,22 +5,21 @@
   </div>
 
   <!--Content-->
-  <div>
-    <v-row>
-      <v-col cols="12" sm="9">
-        <ArticleList />
-      </v-col>
-      <v-col cols="12" sm="3">
-        <v-row >
-          <IntroCard />
-        </v-row>
-        <v-row>
-          <TagCloud />
-        </v-row>
-      </v-col>
-    </v-row>
-  </div>
-
+    <div>
+      <v-row>
+        <v-col cols="12" sm="9">
+          <ArticleList />
+        </v-col>
+        <v-col cols="12" sm="3">
+          <v-row >
+            <IntroCard />
+          </v-row>
+          <v-row>
+            <TagCloud />
+          </v-row>
+        </v-col>
+      </v-row>
+    </div>
 </template>
 
 <script setup lang="ts">

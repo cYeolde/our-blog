@@ -7,7 +7,7 @@
       <v-icon start icon="mdi-label-outline"></v-icon>
       Tags
       <v-banner-text class="text-overline text-disabled">
-        1111
+        List All Tags
       </v-banner-text>
     </v-banner>
   </v-container>

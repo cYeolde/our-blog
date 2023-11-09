@@ -55,7 +55,6 @@
                   <v-btn
                     variant="text"
                     :class="{ 'show-btns': isHovering }"
-                    :color="transparent"
                   >
                     Read More
                   </v-btn>

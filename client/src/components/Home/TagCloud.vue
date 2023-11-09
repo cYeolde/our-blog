@@ -38,25 +38,11 @@ const generateRandomColor = () => {
 // };
 
 const echartsData = [
-  { value: '30', name: '123' },
-  { value: '29', name: '标签2' },
-  { value: '28', name: '标签3' },
-  { value: '27', name: '标签4' },
-  { value: '26', name: '标签5' },
-  { value: '25', name: '标签6' },
-  { value: '24', name: '标签7' },
-  { value: '23', name: '标签8' },
-  { value: '22', name: '标签9' },
-  { value: '21', name: '标签10' },
-  { value: '20', name: '标签11' },
-  { value: '16', name: '标签12' },
-  { value: '15', name: '标签13' },
-  { value: '14', name: '标签14' },
-  { value: '13', name: '标签15' },
-  { value: '12', name: '标签16' },
-  { value: '11', name: '标签17' },
-  { value: '10', name: '标签18' },
-  { value: '9', name: '标签19' },
+  { value: '35', name: 'testTag1' },
+  { value: '29', name: 'testTag2' },
+  { value: '28', name: 'testTag3' },
+  { value: '27', name: 'testTag4' },
+  { value: '30', name: 'testTag5' },
 ];
 
 const initChart = () => {

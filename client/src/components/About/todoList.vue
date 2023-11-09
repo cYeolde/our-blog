@@ -114,9 +114,9 @@
 <script setup lang="ts">
 import {ref, computed,defineEmits} from "vue";
 const todoList=ref([
-  {id:1,task:'睡觉',description:'起床了',isCompleted:true},
-  {id:2,task:'吃饭',description:'吃吃吃',isCompleted:false},
-  {id:3,task:'打豆豆',description:'为啥我给睡觉打勾，是打豆豆已完成...',isCompleted:false},
+  {id:1,task:'睡觉',description:'早睡早起',isCompleted:true},
+  {id:2,task:'吃饭',description:'吃火锅',isCompleted:false},
+  {id:3,task:'学习',description:'敲代码',isCompleted:false},
 ]);
 
 const tab = ref(0);

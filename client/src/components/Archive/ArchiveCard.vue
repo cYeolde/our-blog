@@ -7,7 +7,7 @@
       <v-icon start icon="mdi-folder-outline"></v-icon>
       Archive
       <v-banner-text class="text-overline text-disabled">
-        777777777</v-banner-text>
+        Time Shaft</v-banner-text>
     </v-banner>
     <v-row justify="space-around">
       <v-hover v-slot="{ isHovering, props }">

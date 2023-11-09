@@ -7,7 +7,7 @@
       <v-card-title class="text-h5 text-brown-darken-1">My Profile</v-card-title>
       <v-card-subtitle>个人简介</v-card-subtitle>
       <div class="d-flex d-flex align-center justify-space-around">
-        <v-avatar size="200">
+        <v-avatar size="100">
           <img
             :src="util.getAssetsFile('Avatar/Avatar1.jpg')"
           >

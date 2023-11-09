@@ -30,7 +30,7 @@
               <div class="text-h6 mb-1" >
                 {{articles[i+(page-1)*itemsPerPage].title}}
               </div>
-              <div class="text-caption">Subtitle</div>
+              <div class="text-caption">datetime类型数据合理设置（后端存储到数据库）</div>
             </v-card-item>
             <v-card-actions>
               <router-link :to="`/articles/${articles[i + (page - 1) * itemsPerPage].id}`">
