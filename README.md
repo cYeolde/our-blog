@@ -107,6 +107,7 @@ PC端:
 3.个人简介、标签云
 
 <img src=".\img\Home4" alt="Home4" style="zoom: 20%;" />
+
 #### 4.2、博文详情页
 
 PC端：
