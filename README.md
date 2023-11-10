@@ -92,17 +92,17 @@ upload:
 
 PC端:
 
-<img src=".\img\Home1" alt="Home1" style="zoom: 25%;" />
+<img src=".\img\Home1" alt="Home1" />
 
 移动端:
 
-1.<img src=".\img\Home2" alt="Home2" style="zoom: 25%;" />     2.<img src=".\img\Home3" alt="Home3" style="zoom: 25%;" />    3.<img src=".\img\Home4" alt="Home4" style="zoom: 25%;" />
+1.<img src=".\img\Home2" alt="Home2" style="zoom: 25%;" />2.<img src=".\img\Home3" alt="Home3" style="zoom: 25%;" />3.<img src=".\img\Home4" alt="Home4" style="zoom: 25%;" />
 
 #### 4.2、博文详情页
 
 PC端：
 
-![Article1](.\img\Article1)
+<img src=".\img\Article1" alt="Article1" />
 
 移动端：
 
@@ -112,7 +112,7 @@ PC端：
 
 PC端：
 
-![Photo1](.\img\Photo1)
+<img src=".\img\Photo1" alt="Photo1" />
 
 移动端：
 
@@ -121,8 +121,7 @@ PC端：
 #### 4.4、分类页
 
 PC端：
-
-![Classify](.\img\Classify1)
+<img src=".\img\Classify1" alt="Classify1" />
 
 移动端：
 
@@ -132,9 +131,9 @@ PC端：
 
 PC端：
 
-![Tag1](.\img\Tag1)
+1.<img src=".\img\Tag1" alt="Tag1" /> 
 
-![Tag2](.\img\Tag2)
+1.<img src=".\img\Tag2" alt="Tag2" /> 
 
 
 
@@ -148,7 +147,7 @@ PC端：
 
 PC端：
 
-![Archive1](.\img\Archive1)
+<img src=".\img\Archive1" alt="Archive1" />
 
 移动端：
 
@@ -158,7 +157,7 @@ PC端：
 
 PC端：
 
-![About1](.\img\About1)
+<img src=".\img\About1" alt="About1" />
 
 移动端：
 
