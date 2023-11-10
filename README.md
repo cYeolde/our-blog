@@ -88,14 +88,78 @@ upload:
 
 ## **4、项目展示**
 
-- 首页：
-- 博文详情页：
-- 图片页：
-- 分类页：
-- 标签页：
-- 归档页：
+#### 4.1、首页
+
+PC端:
+
+![Home1](.\img\Home1)
+
+移动端:
+
+1.<img src=".\img\Home2" alt="Home2" style="zoom: 25%;" />     2.<img src=".\img\Home3" alt="Home3" style="zoom: 25%;" />    3.<img src=".\img\Home4" alt="Home4" style="zoom: 25%;" />
+
+#### 4.2、博文详情页
+
+PC端：
+
+![Article1](.\img\Article1)
+
+移动端：
+
+<img src=".\img\Article2" alt="Article2" style="zoom: 25%;" />
+
+#### 4.3、图片页
+
+PC端：
+
+![Photo1](.\img\Photo1)
+
+移动端：
+
+<img src=".\img\Photo2" alt="Photo2" style="zoom: 25%;" />
+
+#### 4.4、分类页
+
+PC端：
+
+![Classify](.\img\Classify1)
+
+移动端：
+
+<img src=".\img\Classify2" alt="Classify2" style="zoom: 25%;" />
+
+#### 4.5、标签页
+
+PC端：
+
+![Tag1](.\img\Tag1)
+
+![Tag2](.\img\Tag2)
 
 
 
+移动端：
+
+1.<img src=".\img\Tag3" alt="Tag3" style="zoom: 25%;" />                        2.  <img src=".\img\Tag4" alt="Tag4" style="zoom: 25%;" />
 
 
+
+#### 4.6、归档页
+
+PC端：
+
+![Archive1](.\img\Archive1)
+
+移动端：
+
+<img src=".\img\Archive2" alt="Archive2" style="zoom:25%;" />
+
+#### 4.7、任务清单
+
+PC端：
+
+![About1](.\img\About1)
+
+移动端：
+
+<img src=".\img\About2" alt="About2" style="zoom:25%;" />
