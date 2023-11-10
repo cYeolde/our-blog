@@ -96,8 +96,17 @@ PC端:
 
 移动端:
 
-1.<img src=".\img\Home2" alt="Home2" style="zoom: 25%;" />2.<img src=".\img\Home3" alt="Home3" style="zoom: 25%;" />3.<img src=".\img\Home4" alt="Home4" style="zoom: 25%;" />
+1.导航栏展示
 
+<img src=".\img\Home2" alt="Home2" style="zoom: 20%;" />
+
+2.首页文章列表
+
+<img src=".\img\Home3" alt="Home3" style="zoom: 20%;" />
+
+3.个人简介、标签云
+
+<img src=".\img\Home4" alt="Home4" style="zoom: 20%;" />
 #### 4.2、博文详情页
 
 PC端：
