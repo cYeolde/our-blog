@@ -92,7 +92,7 @@ upload:
 
 PC端:
 
-![Home1](.\img\Home1)
+<img src=".\img\Home1" alt="Home1" style="zoom: 25%;" />
 
 移动端:
 
