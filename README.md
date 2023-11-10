@@ -98,15 +98,15 @@ PC端:
 
 1.导航栏展示
 
-<img src=".\img\Home2" alt="Home2" style="zoom: 20%;" />
+<img src=".\img\Home2" alt="Home2" height="500px" width="250px" />
 
 2.首页文章列表
 
-<img src=".\img\Home3" alt="Home3" style="zoom: 20%;" />
+<img src=".\img\Home3" alt="Home3" height="500px" width="250px" />
 
 3.个人简介、标签云
 
-<img src=".\img\Home4" alt="Home4" style="zoom: 20%;" />
+<img src=".\img\Home4" alt="Home4" height="500px" width="250px" />
 
 #### 4.2、博文详情页
 
@@ -116,7 +116,7 @@ PC端：
 
 移动端：
 
-<img src=".\img\Article2" alt="Article2" style="zoom: 25%;" />
+<img src=".\img\Article2" alt="Article2" height="500px" width="250px" />
 
 #### 4.3、图片页
 
@@ -126,7 +126,7 @@ PC端：
 
 移动端：
 
-<img src=".\img\Photo2" alt="Photo2" style="zoom: 25%;" />
+<img src=".\img\Photo2" alt="Photo2" height="500px" width="250px" />
 
 #### 4.4、分类页
 
@@ -135,7 +135,7 @@ PC端：
 
 移动端：
 
-<img src=".\img\Classify2" alt="Classify2" style="zoom: 25%;" />
+<img src=".\img\Classify2" alt="Classify2" height="500px" width="250px" />
 
 #### 4.5、标签页
 
@@ -143,13 +143,19 @@ PC端：
 
 1.<img src=".\img\Tag1" alt="Tag1" /> 
 
-1.<img src=".\img\Tag2" alt="Tag2" /> 
+2.<img src=".\img\Tag2" alt="Tag2" /> 
 
 
 
 移动端：
 
-1.<img src=".\img\Tag3" alt="Tag3" style="zoom: 25%;" />                        2.  <img src=".\img\Tag4" alt="Tag4" style="zoom: 25%;" />
+1.标签总览
+
+<img src=".\img\Tag3" alt="Tag3" height="500px" width="250px" />
+
+2.单个标签下的文章列表
+
+<img src=".\img\Tag4" alt="Tag4" height="500px" width="250px" />
 
 
 
@@ -161,7 +167,7 @@ PC端：
 
 移动端：
 
-<img src=".\img\Archive2" alt="Archive2" style="zoom:25%;" />
+<img src=".\img\Archive2" alt="Archive2" height="500px" width="250px" />
 
 #### 4.7、任务清单
 
@@ -171,4 +177,4 @@ PC端：
 
 移动端：
 
-<img src=".\img\About2" alt="About2" style="zoom:25%;" />
+<img src=".\img\About2" alt="About2" height="500px" width="250px" />
